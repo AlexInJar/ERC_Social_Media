@@ -1,3 +1,6 @@
+# ignore Data Because unable to purchase git lfs
+Data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
