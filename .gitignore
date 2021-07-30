@@ -1,5 +1,7 @@
 # ignore Data Because unable to purchase git lfs
 Data/
+Data2/
+Datatest/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
