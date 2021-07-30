@@ -260,7 +260,7 @@ class findlaw(object):
         '''
         pass
 
-def scrap_qid(start,end,dir='Data'):
+def scrap_qid(start,end,dir='Datatest'):
     scraper = findlaw()
     e = None
     # test_scrap.dump_csv(relative_path = 'Data/test.csv')
@@ -268,6 +268,7 @@ def scrap_qid(start,end,dir='Data'):
         # test_scrap.eat_soup(57542030)
         scraper.drink_soup(start,end)
     except KeyboardInterrupt:
+        scraper.dump_csv(relative_path = '{}/{}to{}'.format(dir,start,end))
         print('Interrupted ----------------------------------------------------------------------------------')
         global pool
         pool.close()
@@ -286,15 +287,16 @@ def scrap_qid(start,end,dir='Data'):
 
 if __name__ == "__main__":
 
-    start = 43065714 
-    end = 50310850
-    pieces = 12
+    start = 50310850 
+    end = 59897334
+    # end = start + 32
+    pieces = 64
 
     increment = int((end - start)/pieces)
     print(increment)
     ticks = [start + i*increment for i in range(pieces+1)]
 
-    with multiprocessing.Pool(processes=4) as pool:
+    with multiprocessing.Pool(processes=16) as pool:
         try:
             results = pool.starmap(scrap_qid, [(ticks[i],ticks[i+1]) for i in range(pieces)])
         except KeyboardInterrupt:
