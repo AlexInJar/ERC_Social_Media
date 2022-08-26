@@ -1,3 +1,6 @@
+## ignore DS_Store in Mac
+.DS_Store
+
 # ignore Data Because unable to purchase git lfs
 Data/
 Data2/
