@@ -3,4 +3,4 @@ This repository contains the scrapping scripts used for social media analysis an
 
 ## File structure:
 - findlaw.py  defines an object that scrapes uses the request respond cycle 
-- multi_process.py enables scrapping for a long time frame and dynamically saving the data onto the disk
+- multi_process.py enables scrapping for a days using multiple CPU processors and dynamically saving the data onto the disk
